@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeHub Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --bg: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+            --accent: #f8fafc;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            color: var(--text);
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+        h3 {
+            color: var(--primary);
+            margin-top: 20px;
+        }
+        p { margin: 15px 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        code {
+            background: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #e11d48;
+        }
+        .card {
+            background: var(--accent);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+            .container { padding: 0; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HomeHub</h1>
+            <p style="color: var(--secondary); font-weight: 500;">Professional Smart Living Ecosystem Documentation</p>
+        </header>
+
+        <section>
+            <h2>Project Overview</h2>
+            <p>HomeHub is a sophisticated, multi-role Android application designed to streamline property management, caretaker services, and student living. It integrates a robust Firebase backend with a modular Kotlin-based frontend to provide a seamless experience for all stakeholders in the residential ecosystem.</p>
+        </section>
+
+        <section>
+            <h2>Technical Architecture</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Platform:</strong> Android (Kotlin)</li>
+                    <li><strong>Backend:</strong> Firebase (Authentication, Real-time Database, Storage)</li>
+                    <li><strong>Architecture:</strong> Modular Package-by-Feature</li>
+                    <li><strong>Automation:</strong> Python-based maintenance scripts</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>User Roles & Modules</h2>
+            <h3>Student / Resident</h3>
+            <p>Property search, application, rent payment, and maintenance request tracking.</p>
+            
+            <h3>Caretaker</h3>
+            <p>Maintenance task management, resident communication, and property inspection logs.</p>
+            
+            <h3>Supplier</h3>
+            <p>Service request fulfillment, invoicing, and payment tracking.</p>
+            
+            <h3>Administrator</h3>
+            <p>User role management, system monitoring, and financial oversight.</p>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Real-time Chat:</strong> Instant communication between all user roles.</li>
+                <li><strong>Billing System:</strong> Integrated rent and service tracking.</li>
+                <li><strong>Maintenance Workflow:</strong> End-to-end service request management.</li>
+                <li><strong>Firebase Integration:</strong> Secure sync and authentication.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Setup Instructions</h2>
+            <div class="card">
+                <ol>
+                    <li>Clone the repository and ensure all assets are present.</li>
+                    <li>Place <code>serviceAccountKey.json</code> in the root directory.</li>
+                    <li>Run <code>RUN_ME_FIRST.bat</code> to initialize the environment.</li>
+                    <li>Open in Android Studio and sync Gradle.</li>
+                </ol>
+            </div>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 HomeHub Development Team | Version 1.2.0 | Confidential Documentation
+        </div>
+    </div>
+</body>
+</html>

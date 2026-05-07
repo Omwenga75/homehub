@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/studentCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Header Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/moreButton"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#F1F5F9"
+                    app:strokeWidth="1dp">
+                    <ImageView
+                        android:id="@+id/studentIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/person"
+                        android:scaleType="centerCrop" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvRoleLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="STUDENT NAME"
+                            android:textColor="@color/gray_800"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textAllCaps="true" />
+
+                        <ImageView
+                            android:id="@+id/verifiedBadge"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_verified"
+                            android:visibility="gone"
+                            app:tint="@color/verification_badge" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/moreButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/more"
+                app:tint="@color/text_secondary" />
+        </RelativeLayout>
+
+        <!-- Email Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_email"
+                app:tint="@color/primary_dark"
+                android:layout_marginEnd="10dp" />
+
+            <TextView 
+                android:id="@+id/emailText" 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:text="student@email.com" 
+                android:textColor="@color/gray_800" 
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Phone and Location Row (Centered) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/call"
+                    app:tint="@color/primary_dark"
+                    android:layout_marginEnd="8dp" />
+                <TextView 
+                    android:id="@+id/phoneText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="+254 712 345 678" 
+                    android:textColor="@color/gray_800" 
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <View 
+                android:layout_width="1dp" 
+                android:layout_height="10dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="@color/border_light"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView 
+                    android:id="@+id/locationText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Main Campus" 
+                    android:textSize="12sp" 
+                    android:textColor="@color/gray_800"
+                    android:ellipsize="end"
+                    android:maxLines="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stats Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="4dp">
+
+            <!-- Bookings -->
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/stats_pill_bg"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView 
+                    android:id="@+id/labelBookings"
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="BOOKINGS" 
+                    android:textSize="9sp" 
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/bookingsText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="12" 
+                    android:includeFontPadding="false"
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Total Payments -->
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="2" 
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/stats_pill_bg"
+                android:paddingVertical="8dp">
+
+                <TextView 
+                    android:id="@+id/labelPayments"
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="TOTAL PAYMENTS MADE" 
+                    android:textSize="9sp" 
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/paymentsText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Sh 24,500" 
+                    android:includeFontPadding="false"
+                    android:textColor="@color/green" 
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView 
+            android:id="@+id/joinDateText" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="10dp"
+            android:text="Joined Oct 2023" 
+            android:textSize="10sp" 
+            android:textColor="@color/text_secondary" 
+            android:alpha="0.8"
+            android:gravity="center"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

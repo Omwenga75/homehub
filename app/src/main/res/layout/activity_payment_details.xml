@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_rounded_bottom"
+        android:backgroundTint="@color/primary_dark"
+        app:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="16dp"
+            app:title="Booking Payment"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="48dp">
+
+            <!-- Step Indicator Pulse Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F1F5F9">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="40dp">
+
+                        <!-- Step 1 Circle -->
+                        <FrameLayout
+                            android:id="@+id/step1Circle"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_step_indicator_active">
+                            <TextView
+                                android:id="@+id/step1Num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:id="@+id/step1Check"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_check"
+                                android:visibility="gone"
+                                app:tint="@color/white" />
+                        </FrameLayout>
+
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_weight="1"
+                            android:background="#E2E8F0" />
+
+                        <!-- Step 2 Circle -->
+                        <FrameLayout
+                            android:id="@+id/step2Circle"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_step_indicator_inactive">
+                            <TextView
+                                android:id="@+id/step2Num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="2"
+                                android:textColor="#94A3B8"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:id="@+id/step2Check"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_check"
+                                android:visibility="gone"
+                                app:tint="@color/white" />
+                        </FrameLayout>
+
+                        <View
+                            android:id="@+id/line2"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:layout_weight="1"
+                            android:background="#E2E8F0" />
+
+                        <!-- Step 3 Circle -->
+                        <FrameLayout
+                            android:id="@+id/step3Circle"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_step_indicator_inactive">
+                            <TextView
+                                android:id="@+id/step3Num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="3"
+                                android:textColor="#94A3B8"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/step1Label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="BOOKING"
+                            android:textColor="#388E3C"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+                        <TextView
+                            android:id="@+id/step2Label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="PAYMENT"
+                            android:textColor="#94A3B8"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+                        <TextView
+                            android:id="@+id/step3Label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="CONFIRM"
+                            android:textColor="#94A3B8"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Property Preview Pulse Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F1F5F9">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/propertyImage"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/CornerRadius12"
+                        android:src="@drawable/ic_house_placeholder" />
+                        
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/propertyTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Property Title"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/propertyLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Location"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+                        <TextView
+                            android:id="@+id/propertyCaretaker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Caretaker Info"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Price Breakdown Summary -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F8FAFC"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F1F5F9">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/rentAmountLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RENT AMOUNT"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.05" />
+
+                            <TextView
+                                android:id="@+id/rentAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="KSh 0.0"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/rentDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PER MONTH"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.05" />
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="32dp"
+                            android:background="#E2E8F0"
+                            android:layout_marginHorizontal="16dp" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/totalAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="KSh 0.0"
+                                android:textColor="#388E3C"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/totalPayableLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TOTAL PAYABLE"
+                                android:textColor="#388E3C"
+                                android:textSize="10sp"
+                                android:textStyle="bold"
+                                android:textAllCaps="true"
+                                android:letterSpacing="0.05" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Student Discount Row (hidden by default) -->
+                    <LinearLayout
+                        android:id="@+id/studentDiscountRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🎓 Student Discount (10%)"
+                            android:textColor="#388E3C"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/studentDiscountAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- KSh 0"
+                            android:textColor="#388E3C"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Main Content Animator -->
+            <ViewAnimator
+                android:id="@+id/stepAnimator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:inAnimation="@android:anim/fade_in"
+                android:outAnimation="@android:anim/fade_out">
+
+                <!-- STEP 1: BOOKING DETAILS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking Details"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-black" />
+
+                    <!-- WATER ORDER DETAILS (visible only for water payments) -->
+                    <LinearLayout
+                        android:id="@+id/waterOrderDetailsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!-- Quantity Picker -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="🪣 QUANTITY (LITRES)"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/waterQtyCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="12dp">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnDecreaseQty"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:text="−"
+                                    android:textSize="20sp"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    app:cornerRadius="12dp" />
+
+                                <TextView
+                                    android:id="@+id/tvQuantityDisplay"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="20 L"
+                                    android:textColor="@color/primary_dark"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnIncreaseQty"
+                                    android:layout_width="44dp"
+                                    android:layout_height="44dp"
+                                    android:text="+"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/white"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    app:cornerRadius="12dp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Delivery Phone -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="📞 YOUR PHONE NUMBER"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/waterPhoneInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="20dp"
+                                android:background="@android:color/transparent"
+                                android:hint="e.g. 0712 345 678"
+                                android:inputType="phone"
+                                android:textColor="@color/primary_dark"
+                                android:textSize="16sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Delivery Address -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="📍 DELIVERY ADDRESS"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/waterAddressInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="20dp"
+                                android:background="@android:color/transparent"
+                                android:hint="e.g. Room 12, Nchiru Estate"
+                                android:minLines="2"
+                                android:textColor="@color/primary_dark"
+                                android:textSize="16sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/bookingAddressLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="📍 BOOKING ADDRESS"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/bookingAddressCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#F1F5F9"
+                        app:cardBackgroundColor="@color/surface">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addressInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp"
+                            android:background="@android:color/transparent"
+                            android:hint="e.g. Nchiru"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="16sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/roomSelectionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="🚪 ROOM NUMBER"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#F1F5F9"
+                        app:cardBackgroundColor="@color/surface">
+                        <Spinner
+                            android:id="@+id/roomInputStep1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp"
+                            android:background="@android:color/transparent"
+                            android:spinnerMode="dropdown" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- WATER TYPE SELECTION (Visible only for Water) -->
+                    <LinearLayout
+                        android:id="@+id/waterTypeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="💧 SELECT WATER TYPE"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+                            
+                            <RadioGroup
+                                android:id="@+id/waterTypeGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="12dp">
+                                <RadioButton
+                                    android:id="@+id/radioDrinking"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Drinking"
+                                    android:checked="true"
+                                    android:buttonTint="#388E3C" />
+                                <RadioButton
+                                    android:id="@+id/radioUsing"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="General Use"
+                                    android:buttonTint="#388E3C" />
+                            </RadioGroup>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- WATER PAYMENT METHOD (Visible only for Water) -->
+                    <LinearLayout
+                        android:id="@+id/waterPaymentMethodContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="💳 PAYMENT METHOD"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+                            
+                            <RadioGroup
+                                android:id="@+id/waterPaymentGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="12dp">
+                                <RadioButton
+                                    android:id="@+id/radioPayNow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Pay Now"
+                                    android:checked="true"
+                                    android:buttonTint="#F26522" />
+                                <RadioButton
+                                    android:id="@+id/radioPOD"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="On Delivery"
+                                    android:buttonTint="#F26522" />
+                            </RadioGroup>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="📞 M-PESA PHONE NUMBER"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#C6F6D5"
+                            app:cardBackgroundColor="#F0FFF4">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="+254"
+                                android:textColor="#388E3C"
+                                android:textStyle="bold"
+                                android:textSize="16sp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginStart="12dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#F1F5F9"
+                            app:cardBackgroundColor="@color/surface">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/phoneInputStep1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingHorizontal="20dp"
+                                android:background="@android:color/transparent"
+                                android:hint="7XX XXX XXX"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:textColor="@color/primary_dark"
+                                android:textSize="16sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="🕒 PAYMENT TIMELINE"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/paymentTimingCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#F1F5F9"
+                        app:cardBackgroundColor="@color/surface">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/paymentTimingGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            app:singleSelection="true"
+                            app:selectionRequired="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipInstant"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pay Instantly"
+                                android:checked="true" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip24h"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="24 Hours" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip48h"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="48 Hours (Max)" />
+                        </com.google.android.material.chip.ChipGroup>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/leaseTermsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="By proceeding, you agree to the rental terms and conditions of this property."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:gravity="center"
+                        android:alpha="0.8" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnStep1Next"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="40dp"
+                        android:text="CONTINUE TO PAYMENT ➔"
+                        android:textStyle="bold"
+                        android:backgroundTint="#F26522"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+
+                <!-- STEP 2: PAYMENT (M-PESA) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#388E3C">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="32dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="0dp"
+                                    app:cardBackgroundColor="@color/surface">
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/mpesa" />
+                                </com.google.android.material.card.MaterialCardView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:text="M-PESA"
+                                    android:textColor="@color/white"
+                                    android:textSize="32sp"
+                                    android:fontFamily="sans-serif-black" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="SAFARICOM MOBILE PAYMENT"
+                                android:textColor="#E8F5E9"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.05" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#C6F6D5"
+                        app:cardBackgroundColor="#F0FFF4">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="20dp">
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                app:cardCornerRadius="10dp"
+                                app:cardBackgroundColor="@color/surface"
+                                app:cardElevation="2dp">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/hms" />
+                            </com.google.android.material.card.MaterialCardView>
+                            <TextView
+                                android:id="@+id/stkPromptText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Enter your phone number and confirm payment."
+                                android:textColor="@color/primary_dark"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/phoneInputCardStep2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#F1F5F9"
+                        app:cardBackgroundColor="@color/surface"
+                        android:visibility="gone">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📞 CONFIRM M-PESA NUMBER"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.05" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="12dp"
+                                android:orientation="horizontal">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="80dp"
+                                    android:layout_height="match_parent"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="1dp"
+                                    app:strokeColor="#C6F6D5"
+                                    app:cardBackgroundColor="#F0FFF4">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="+254"
+                                        android:textColor="#388E3C"
+                                        android:textStyle="bold"
+                                        android:textSize="16sp" />
+                                </com.google.android.material.card.MaterialCardView>
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_marginStart="12dp"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="1dp"
+                                    app:strokeColor="#F1F5F9"
+                                    app:cardBackgroundColor="@color/surface">
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/phoneInputStep2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:paddingHorizontal="20dp"
+                                        android:background="@android:color/transparent"
+                                        android:hint="7XX XXX XXX"
+                                        android:inputType="phone"
+                                        android:maxLength="10"
+                                        android:textColor="@color/primary_dark"
+                                        android:textSize="16sp" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="32dp"
+                        android:orientation="horizontal">
+                        
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStep2Back"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="BACK"
+                            android:textColor="@color/text_secondary"
+                            app:icon="@drawable/ic_arrow_back"
+                            app:iconSize="18dp"
+                            app:iconGravity="textStart"
+                            app:iconTint="@color/text_secondary"
+                            app:cornerRadius="20dp"
+                            app:strokeColor="#E2E8F0" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStep2Pay"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:text="CONFIRM AND PAY ✓"
+                            android:textStyle="bold"
+                            android:backgroundTint="#388E3C"
+                            app:cornerRadius="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_lock"
+                            app:tint="#CBD5E1" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Secured by Safaricom M-Pesa"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- STEP 3: CONFIRM (SUCCESS) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="40dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#F0FFF4">
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_check"
+                            app:tint="#388E3C" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/step3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Booking Confirmed!"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-black" />
+
+                    <TextView
+                        android:id="@+id/step3Msg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Your payment was successful and your unit is reserved. Check your dashboard for details."
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewBookings"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="40dp"
+                        android:text="VIEW PAYMENT HISTORY ➔"
+                        android:textStyle="bold"
+                        android:backgroundTint="#388E3C"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+
+            </ViewAnimator>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Overlay Loading (for STK Push Polling) -->
+    <FrameLayout
+        android:id="@+id/pollingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DDFFFFFF"
+        android:translationZ="100dp"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ProgressBar
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:indeterminateTint="@color/primary_dark" />
+            <TextView
+                android:id="@+id/pollingStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Checking Payment Status..."
+                android:textColor="@color/primary_dark"
+                android:textStyle="bold" />
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelPolling"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Cancel"
+                android:textColor="#E53935" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

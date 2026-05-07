@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="id_v8_initial_price_values">
+        <item>0.0</item>
+        <item>200000.0</item>
+    </array>
+</resources>

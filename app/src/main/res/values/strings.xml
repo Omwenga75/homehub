@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HomeHub</string>
+    <string name="default_web_client_id">411917316187-sdenqi2hdnv1obs4ukvjdt7g27gqdg4f.apps.googleusercontent.com</string>
+    <string name="back">Back</string>
+    <string name="add_your_first_property_message">Start by adding your first property to showcase to potential renters</string>
+    <string name="add_property">Add Property</string>
+    <string name="my_properties">My Properties</string>
+    <string name="become_host">Become a Caretaker</string>
+    <string name="application_pending">Application Pending</string>
+    <string name="host_application_pending">Caretaker Application Pending Review</string>
+    <string name="host_application_approved">Caretaker Application Approved</string>
+    <string name="host_application_rejected">Application Rejected</string>
+    <string name="verified_host">Verified Caretaker</string>
+    <string name="no_properties">No properties</string>
+    <string name="no_properties_found">No Properties Found</string>
+    <string name="add_your_first_property">Add your first property to get started</string>
+    <string name="google_places_api_key">YOUR_API_KEY_HERE</string>
+    <string name="recommended_for_you">✨ Recommended for You</string>
+    <string name="my_wallet">My Wallet</string>
+</resources>

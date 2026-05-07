@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ========== PRIMARY COLOR PALETTE ========== -->
+    <!-- Main brand colors (use these for primary UI elements) -->
+    <color name="primary">#007D50</color> <!-- Premium Royal Blue -->
+    <color name="emerald_green">#007D50</color>
+    <color name="primary_dark">#007D50</color> <!-- Dark Emerald Green -->
+    <color name="primary_dark_10">#1A1E293B</color>
+    <color name="primary_light">#60A5FA</color>
+    <color name="primary_variant">#2563EB</color>
+    <color name="blue_primary">#2563EB</color>
+    <color name="blue_secondary">#3B82F6</color>
+    <color name="blue_dark">#1E293B</color>
+    <color name="blue_light_transparent">#1A2563EB</color>
+    <color name="bg_light">#F8FAFC</color>
+    <color name="bg_light_gray">#F5F7FA</color>
+    <color name="input_bg">#8D6E63</color>
+    <color name="text_primary">@color/primary_dark</color>
+    <color name="title_text_color">#1E293B</color> <!-- Same as primary_dark in light mode -->
+    <color name="text_secondary">#8B90AD</color>
+    <color name="blue">#007D50</color>
+    <color name="starColor">#FFD700</color>
+    <color name="green">#10B981</color>
+    <color name="verified_active_orange">#9C27B0</color>
+    <color name="success_green_alpha">#1A4CAF50</color>
+    <color name="gray">#BDBDBD</color>
+    <color name="textSecondary">#8B90AD</color>
+    <color name="textPrimary">@color/primary_dark</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="divider_light">#F5F5F5</color>
+    <color name="gray_light">#E0E0E0</color>
+    <color name="gray_dark">#757575</color>
+    <color name="gray_medium">#9E9E9E</color>
+
+    <!-- ========== SECONDARY/ACCENT COLOR PALETTE ========== -->
+    <color name="secondary">#FF4081</color>
+    <color name="secondary_dark">#F50057</color>
+    <color name="secondary_light">#FF80AB</color>
+
+    <!-- ========== MATERIAL DESIGN COLORS (Optimized) ========== -->
+    <color name="pink_700">#C2185B</color>
+    <color name="red_400">#EF5350</color>
+    <color name="red_500">#F44336</color>
+    <color name="red_700">#D32F2F</color>
+    <color name="purple_400">#AB47BC</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="deep_purple_400">#7E57C2</color>
+    <color name="blue_50">#E3F2FD</color>
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="cyan_400">#26C6DA</color>
+    <color name="cyan_500">#00BCD4</color>
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_400">#007D50</color>
+    <color name="green_500">#007D50</color>
+    <color name="green_700">#007D50</color>
+    <color name="green_800">#2E7D32</color>
+    <color name="yellow_700">#FBC02D</color>
+    <color name="amber_500">#FFC107</color>
+    <color name="orange_50">#FFF3E0</color>
+    <color name="orange_400">#FFA726</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_700">#F57C00</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+
+    <!-- ========== NEUTRAL COLOR PALETTE ========== -->
+    <!-- Black & White -->
+    <color name="white">#FFFFFF</color>
+    <color name="true_white">#FFFFFF</color> <!-- Always White, even in Dark Mode -->
+    <color name="black">#000000</color>
+    <color name="true_black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_pure_alpha">#CCFFFFFF</color>
+    <color name="white_translucent">#80FFFFFF</color>
+
+    <!-- Gray Scale (Aliases for compatibility) -->
+    <color name="gray_50">@color/grey_50</color>
+    <color name="gray_100">@color/grey_100</color>
+    <color name="gray_200">@color/grey_200</color>
+    <color name="gray_300">@color/grey_300</color>
+    <color name="gray_400">@color/grey_400</color>
+    <color name="gray_500">@color/grey_500</color>
+    <color name="gray_600">@color/grey_600</color>
+    <color name="gray_700">@color/grey_700</color>
+    <color name="gray_800">@color/grey_800</color>
+    <color name="gray_900">@color/grey_900</color>
+
+    <!-- ========== SEMANTIC COLORS ========== -->
+    <!-- Status/State Colors -->
+    <color name="success_color">@color/green_500</color>
+    <color name="warning_color">@color/amber_500</color>
+    <color name="error_color">@color/red_500</color>
+    <color name="error">@color/red_500</color>
+    <color name="info_color">@color/blue_500</color>
+
+    <!-- ========== PROPERTY TYPE COLORS ========== -->
+    <color name="property_bedsitter">@color/orange_400</color>
+    <color name="property_apartment">@color/blue_400</color>
+    <color name="property_villa">@color/green_400</color>
+    <color name="property_mansion">@color/purple_400</color>
+    <color name="property_studio">@color/cyan_400</color>
+    <color name="property_two_beds">@color/deep_purple_400</color>
+    <color name="property_three_beds">@color/red_400</color>
+
+    <!-- ========== UI ELEMENT COLORS ========== -->
+    <!-- Background Colors -->
+    <color name="background">@color/grey_50</color>
+    <color name="surface">@color/white</color>
+
+    <!-- Text Colors -->
+    <color name="text_hint">@color/grey_400</color>
+    <color name="text_disabled">@color/grey_300</color>
+    <color name="text_on_primary">@color/white</color>
+    <color name="text_on_secondary">@color/white</color>
+    <color name="text_blue">@color/blue_500</color> <!-- Blue in Light Mode -->
+
+    <!-- Onboarding Colors -->
+    <color name="onboarding_text_primary">@color/primary_dark</color> <!-- Primary dark in light mode -->
+    <color name="onboarding_icon_tint">@color/primary_dark</color> <!-- Primary dark in light mode -->
+
+    <!-- Icon Colors -->
+    <color name="icon_active">@color/blue_500</color>
+    <color name="icon_inactive">@color/grey_600</color>
+    <color name="icon_on_primary">@color/white</color>
+
+    <!-- Divider & Border Colors -->
+    <color name="border">@color/grey_300</color>
+    <color name="border_light">@color/grey_100</color>
+    <color name="card_stroke">#B0B0B0</color> <!-- Enhanced Visibility: Darker Gray -->
+
+    <!-- ========== COMPONENT SPECIFIC COLORS ========== -->
+    <!-- Button Colors -->
+    <color name="button_primary">@color/blue_500</color>
+    <color name="button_primary_pressed">@color/blue_700</color>
+    <color name="button_secondary_pressed">@color/pink_700</color>
+    <color name="button_disabled">@color/grey_300</color>
+    <color name="button_text_primary">@color/white</color>
+    <color name="button_text_secondary">@color/white</color>
+
+    <!-- Chip/Tag Colors -->
+    <color name="chip_background">@color/blue_50</color>
+    <color name="chip_text">@color/blue_700</color>
+    <color name="chip_outline">@color/blue_500</color>
+    <color name="chip_selected">@color/blue_500</color>
+    <color name="chip_selected_text">@color/white</color>
+
+    <!-- Card Colors -->
+    <color name="card_background">@color/white</color>
+    <color name="card_shadow">#1A000000</color>
+    <color name="card_elevated">@color/white</color>
+
+    <!-- Rating/Star Colors -->
+    <color name="rating_filled">@color/amber_500</color>
+    <color name="rating_empty">@color/grey_300</color>
+    <color name="rating_background">@color/grey_50</color>
+
+    <!-- Progress/Indicator Colors -->
+    <color name="progress_primary">@color/blue_500</color>
+    <color name="progress_background">@color/grey_300</color>
+    <color name="progress_completed">#00A86B</color>
+    <color name="progress_active">#2196F3</color>
+    <color name="progress_pending">#E0E0E0</color>
+
+    <!-- Switch/Toggle Colors -->
+    <color name="switch_track">@color/green_500</color>
+    <color name="switch_thumb">@color/white</color>
+    <color name="switch_track_inactive">@color/grey_500</color>
+
+    <!-- ========== FEATURE SPECIFIC COLORS ========== -->
+    <color name="notification_badge_text">@color/white</color>
+    <color name="notification_background">@color/orange_50</color>
+
+    <color name="booking_confirmed">@color/green_500</color>
+    <color name="booking_pending">@color/amber_500</color>
+    <color name="booking_cancelled">@color/red_500</color>
+    <color name="booking_completed">@color/blue_500</color>
+
+    <color name="filter_active">@color/blue_500</color>
+    <color name="filter_inactive">@color/grey_600</color>
+    <color name="filter_background">@color/grey_100</color>
+    <color name="filter_chip">@color/blue_50</color>
+    <color name="search_interface_color">@color/text_secondary</color>
+    <color name="filter_icon_color">@color/search_interface_color</color>
+
+    <color name="badge_featured">@color/amber_500</color>
+    <color name="badge_discount">@color/green_500</color>
+    <color name="badge_sold">@color/red_500</color>
+    <color name="badge_text">@color/white</color>
+
+    <!-- ========== GRADIENT COLORS ========== -->
+    <color name="gradient_start">@color/blue_500</color>
+    <color name="gradient_mid">@color/light_blue_500</color>
+    <color name="gradient_end">@color/cyan_500</color>
+
+    <!-- PREMIUM HOMEVIEW GRADIENT (Unified Theme) -->
+    <color name="gradient_premium_start">#1A4D44</color>
+    <color name="gradient_premium_center">#0D362F</color>
+    <color name="gradient_premium_end">#051A16</color>
+
+    <!-- ========== SHADOW COLORS ========== -->
+    <color name="shadow_low">#0D000000</color>
+    <color name="shadow_medium">#1A000000</color>
+    <color name="shadow_high">#26000000</color>
+
+    <!-- ========== THEME ALIASES (For backward compatibility) ========== -->
+    <color name="colorPrimary">@color/primary</color>
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <color name="colorAccent">@color/secondary</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorOnSecondary">@color/white</color>
+    <color name="colorSurface">@color/surface</color>
+    <color name="colorOnSurface">@color/text_primary</color>
+    <color name="colorBackground">@color/background</color>
+    <color name="colorOnBackground">@color/text_primary</color>
+    <color name="colorError">@color/error</color>
+    <color name="colorOnError">@color/white</color>
+
+    <!-- Colors referenced by missing drawables -->
+    <color name="light_gray">@color/gray_200</color>
+    <color name="gold">#FFD700</color>
+    <color name="primary_gold">#FFD700</color>
+    <color name="primaryColor">@color/primary</color>
+    <color name="purple_stripe">@color/purple_500</color>
+    <color name="card_selected_stroke">@color/primary</color>
+    <color name="blue_stripe">@color/blue_500</color>
+    <color name="red">@color/red_500</color>
+    
+    <!-- Retained specific compatibility colors for HomeHub -->
+    <color name="themeColor">#00A86B</color>
+    <color name="pinkPrimary">#FF4081</color>
+    <color name="lightBackground">#FAFBFE</color>
+    <color name="lightGold">#FDFCFC</color>
+    <color name="light_white">#E0E0E0</color>
+    <color name="designer">#335555</color>
+    <color name="verification_badge">@color/primary_dark</color>
+    <color name="branding_text">@color/primary_dark</color>
+    <color name="branding_tagline">#B0064E3B</color>
+    <!-- Role Selection Adaptive Colors (Light Mode Defaults) -->
+    <color name="rs_bg_start">#F5F7FA</color>
+    <color name="rs_bg_center">#E8F2F0</color>
+    <color name="rs_bg_end">#FFFFFF</color>
+    <color name="rs_text_title">#007D50</color>
+    <color name="rs_text_sub">#667C77</color>
+    <color name="rs_card_bg">#F0F4F3</color>
+    <color name="rs_card_stroke">#D1E0DD</color>
+    <color name="rs_icon_tint">#00A86B</color>
+    <color name="rs_arrow_tint">#8B90AD</color>
+    <color name="success_green">@color/green_500</color>
+    <color name="success">@color/green_500</color>
+    <color name="orange">@color/orange_500</color>
+    <color name="firstcolor">@color/primary</color>
+    <color name="colorOutline">@color/grey_300</color>
+    <color name="light_green">#8BC34A</color>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="28dp"
+    android:gravity="center_horizontal"
+    android:background="@android:color/transparent">
+
+    <!-- Header Icon/Verification Badge -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:tint="@color/primary_dark"
+        android:layout_marginBottom="12dp"
+        android:alpha="0.8"/>
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Name"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We've suggested a display name based on your account. This is how you'll appear to others on HomeHub."
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:lineSpacingExtra="4dp"
+        android:gravity="center"
+        android:layout_marginBottom="28dp"
+        android:paddingHorizontal="16dp"/>
+
+    <!-- Premium Profile Preview Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="#F5F5F5"
+        android:layout_marginBottom="24dp">
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <ImageView
+                android:id="@+id/profilePreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/gray_200"/>
+                
+            <TextView
+                android:id="@+id/profileInitialsText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="HH"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:fontFamily="sans-serif-black"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Input Field with Modern Styling -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        app:hintTextColor="@color/primary_dark"
+        app:boxStrokeColor="@color/primary_dark"
+        app:boxStrokeWidth="1.5dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:startIconDrawable="@drawable/baseline_account_circle_24"
+        app:startIconTint="@color/primary_dark"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/text_secondary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmedNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:paddingVertical="16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You can always change this later in settings."
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-italic"/>
+
+</LinearLayout>

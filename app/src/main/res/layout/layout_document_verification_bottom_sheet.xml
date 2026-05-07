@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    OBSOLETE: This layout has been replaced by activity_id_verification.xml or direct dialog logic.
+    Replaced by com.example.homehub.ui.verification.IdVerificationActivity.
+    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    ... content commented out ...
+</LinearLayout>
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />

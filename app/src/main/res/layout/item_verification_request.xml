@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/verificationCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/statusBadge"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/person"
+                    app:tint="@color/primary_dark"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/roleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="APPLICANT"
+                            android:textColor="@color/gray_800"
+                            android:textSize="10sp"
+                            android:textAllCaps="true" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/nameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="John Doe"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/statusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="PENDING"
+                android:background="@drawable/badge_pending"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <!-- Phone and ID Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/call"
+                app:tint="@color/primary_dark"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="Contact Phone" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/phoneText" 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="+254712345678" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="ID Number" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/idNumberText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="12345678" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stats Row Rounded & Centered -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="3">
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Doc Type" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/docTypeText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="ID Card" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Region" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/regionText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Nairobi" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Submitted" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/dateText" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Oct 12" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View 
+            android:layout_width="match_parent" 
+            android:layout_height="1dp" 
+            android:background="@color/border_light" 
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView 
+                android:layout_width="0dp" 
+                android:layout_weight="1" 
+                android:layout_height="wrap_content" 
+                android:text="REVIEW APPLICATION" 
+                android:textSize="11sp" 
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                android:letterSpacing="0.05"/>
+            <ImageView 
+                android:layout_width="14dp" 
+                android:layout_height="14dp" 
+                android:src="@drawable/arrow" 
+                app:tint="@color/primary_dark" 
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

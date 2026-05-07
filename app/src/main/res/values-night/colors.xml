@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Role Selection Adaptive Colors (Dark Mode) -->
+    <color name="rs_bg_start">#1A4D44</color>
+    <color name="rs_bg_center">#0D362F</color>
+    <color name="rs_bg_end">#051A16</color>
+    <color name="rs_text_title">#FFFFFF</color>
+    <color name="rs_text_sub">#CCFFFFFF</color>
+    <color name="rs_card_bg">#1AFFFFFF</color>
+    <color name="rs_card_stroke">#26FFFFFF</color>
+    <color name="rs_icon_tint">#FFFFFF</color>
+    <color name="rs_arrow_tint">#B3FFFFFF</color>
+</resources>

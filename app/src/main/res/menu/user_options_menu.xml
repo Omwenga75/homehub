@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Simplified menu with only essential options -->
+    <item
+        android:id="@+id/menu_suspend"
+        android:title="Suspend User"
+        android:icon="@drawable/badge_rejected" />
+
+    <item
+        android:id="@+id/menu_activate"
+        android:title="Activate User"
+        android:icon="@drawable/badge_approved" />
+
+    <item
+        android:id="@+id/menu_delete"
+        android:title="Delete User"
+        android:icon="@drawable/baseline_delete_24" />
+
+    <item
+        android:id="@+id/menu_send_message"
+        android:title="Send Message"
+        android:icon="@drawable/ic_messages" />
+
+    <item
+        android:id="@+id/menu_reset_password"
+        android:title="Reset Password"
+        android:icon="@drawable/baseline_password_24" />
+</menu>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bookingCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/cardStatus"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/studentIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/person"
+                    app:tint="@color/primary_dark"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BOOKING"
+                            android:textColor="@color/gray_800"
+                            android:textSize="10sp"
+                            android:textAllCaps="true" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvStudentName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Alex Morgan"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/btnDeleteBooking"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:text="CONFIRMED"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/btnDeleteBooking"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_chat_amber"
+                android:padding="6dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="@color/error" />
+        </RelativeLayout>
+
+        <!-- Property Info Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivPropertyImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_house_placeholder"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView 
+                    android:id="@+id/tvPropertyName" 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="Skyline Apartments" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TextView 
+                    android:id="@+id/tvRoomInfo" 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:text="Room: RM-05 (Studio)" 
+                    android:textColor="@color/text_secondary" 
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Contact" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/tvStudentPhone" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="+254712345678" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stats Row Rounded & Centered -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="3">
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Amount paid" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/tvAmount" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="KSh 0" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="M-Pesa Ref" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/tvReceipt" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="N/A" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout 
+                android:layout_width="0dp" 
+                android:layout_height="wrap_content" 
+                android:layout_weight="1" 
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Booked On" 
+                    android:textSize="10sp" 
+                    android:textAllCaps="true"/>
+                <TextView 
+                    android:id="@+id/tvDate" 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="Oct 12" 
+                    android:textColor="@color/primary_dark" 
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View 
+            android:layout_width="match_parent" 
+            android:layout_height="1dp" 
+            android:background="@color/border_light" 
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView 
+                android:layout_width="0dp" 
+                android:layout_weight="1" 
+                android:layout_height="wrap_content" 
+                android:text="MANAGE BOOKING" 
+                android:textSize="11sp" 
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                android:letterSpacing="0.05"/>
+            <ImageView 
+                android:layout_width="14dp" 
+                android:layout_height="14dp" 
+                android:src="@drawable/arrow" 
+                app:tint="@color/primary_dark" 
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

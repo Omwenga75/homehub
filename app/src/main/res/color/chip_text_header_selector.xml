@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected: primary_dark text on white background — high contrast -->
+    <item android:color="@color/primary_dark" android:state_checked="true" />
+    <!-- Unselected: bright white text on frosted glass background -->
+    <item android:color="#FFFFFFFF" />
+</selector>

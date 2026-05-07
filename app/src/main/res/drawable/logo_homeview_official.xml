@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="600dp"
+    android:height="600dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Official HomeView Brand Color: Deep Emerald -->
+    <!-- The House Frame -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M50,12 L12,45 L24,45 L24,85 L76,85 L76,45 L88,45 L50,12 Z 
+                          M50,22 L78,47 L68,47 L68,77 L32,77 L32,47 L22,47 L50,22 Z" />
+
+    <!-- The Chimney -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M65,25 L73,25 L73,40 L65,33 Z" />
+
+    <!-- The Eye (Outer) -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M50,45 C35,45 25,58 25,62 C25,66 35,79 50,79 C65,79 75,66 75,62 C75,58 65,45 50,45 Z
+                          M50,74 C40,74 32,65 32,62 C32,59 40,50 50,50 C60,50 68,59 68,62 C68,65 60,74 50,74 Z" />
+
+    <!-- The Pupil & Iris -->
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M50,54 A8,8 0 1,0 50,70 A8,8 0 1,0 50,54 Z" />
+
+    <!-- Highlight Reflection Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,58 A2.5,2.5 0 1,1 54,63 A2.5,2.5 0 1,1 54,58 Z" />
+
+</vector>

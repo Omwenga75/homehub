@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+
+    <!-- Back Bubble (Amber 500) -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M 16,4 H 7 C 5.34,4 4,5.34 4,7 V 13 C 4,14.66 5.34,16 7,16 V 19.5 L 11.5,16 H 16 C 17.66,16 19,14.66 19,13 V 7 C 19,5.34 17.66,4 16,4 Z" />
+
+    <!-- Cutout Stroke for Front Bubble -->
+    <path
+        android:strokeColor="@color/surface"
+        android:strokeWidth="2.5"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:pathData="M 21,10 H 12 C 10.34,10 9,11.34 9,13 V 19 C 9,20.66 10.34,22 12,22 H 16.5 L 21,26.5 V 22 C 22.66,22 24,20.66 24,19 V 13 C 24,11.34 22.66,10 21,10 Z" />
+
+    <!-- Front Bubble (Primary Dark) -->
+    <path
+        android:fillColor="@color/primary_dark"
+        android:pathData="M 21,10 H 12 C 10.34,10 9,11.34 9,13 V 19 C 9,20.66 10.34,22 12,22 H 16.5 L 21,26.5 V 22 C 22.66,22 24,20.66 24,19 V 13 C 24,11.34 22.66,10 21,10 Z" />
+
+    <!-- Dots -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="
+            M 12.5, 14.5 a 1.5,1.5 0 1,0 0,3 a 1.5,1.5 0 1,0 0,-3
+            M 16.5, 14.5 a 1.5,1.5 0 1,0 0,3 a 1.5,1.5 0 1,0 0,-3
+            M 20.5, 14.5 a 1.5,1.5 0 1,0 0,3 a 1.5,1.5 0 1,0 0,-3
+            " />
+</vector>

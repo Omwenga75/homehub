@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|bottom"
+    android:padding="2dp">
+
+    <TextView
+        android:id="@+id/barValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.2K"
+        android:textColor="@color/text_secondary"
+        android:textSize="9sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardBar"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        app:cardBackgroundColor="@color/primary"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp" />
+
+    <TextView
+        android:id="@+id/barLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Mon"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411917316187",
+    "project_id": "homehub-588b9",
+    "storage_bucket": "homehub-588b9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411917316187:android:346d2fcd75b72168a38f7e",
+        "android_client_info": {
+          "package_name": "com.example.homehub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411917316187-dk632q8vb9u4gcios7v6mp0p50roef41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.homehub",
+            "certificate_hash": "aac084a1dc49faba145021e5ea04528d4855a0d3"
+          }
+        },
+        {
+          "client_id": "411917316187-sdenqi2hdnv1obs4ukvjdt7g27gqdg4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzjSFVcyq614iME_LyvVrMPY32X9bu8TI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411917316187-sdenqi2hdnv1obs4ukvjdt7g27gqdg4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

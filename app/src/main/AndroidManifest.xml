@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.homehub">
+    <!-- Location Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Network Permissions for Location Services -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Storage Permissions for Image Upload -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Camera Permission for Property Images -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- For Android 10+ scoped storage -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- For location in background (optional) -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Hardware features -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+
+    <!-- Package Visibility for Google Play Services -->
+    <queries>
+        <package android:name="com.google.android.gms" />
+        <intent>
+            <action android:name="com.google.android.gms.auth.api.signin.SERVICE" />
+        </intent>
+        <intent>
+            <action android:name="com.google.android.gms.location.places.ui.PICK_PLACE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".HomeHubApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HomeHub"
+        tools:targetApi="31">
+        <activity
+            android:name=".admin.ManageStudentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageCaretakersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageUsersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".auth.SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.HomeView.SplashBranded">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".auth.UserLoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.HomeHub"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".admin.AdminDashboardActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".caretaker.CaretakerDashboardActivity"
+            android:exported="false"
+            android:launchMode="singleTask" /> <!-- Other Activities -->
+        <activity
+            android:name=".other.NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".other.LocationDetailsActivity"
+            android:exported="false" /> <!-- Map Location Picker Activity -->
+        <activity
+            android:name=".other.MapLocationPickerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+
+        <!-- Admin Activities -->
+        <activity
+            android:name=".admin.AdminNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".caretaker.CaretakerNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".supplier.WaterSupplierNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageApplicationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageVerificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ApplicationDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.CaretakerDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManagePropertiesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageBookingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HomeHub" /> <!-- Host Activities -->
+        <activity
+            android:name=".caretaker.CaretakerProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".property.AddPropertyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".caretaker.RoomManagerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".caretaker.CaretakerStudentRoomActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".other.MaintenanceActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.verification.DocumentVerificationActivity"
+            android:theme="@style/Theme.HomeHub"
+            android:exported="false" />
+
+        <activity
+            android:name=".admin.VerificationDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+
+        <activity
+            android:name=".caretaker.CaretakerMessagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".caretaker.CaretakerRoomRequestsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name="com.example.homehub.caretaker.CaretakerBookingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" /> <!-- Property Activities -->
+        <activity
+            android:name=".property.AllPropertiesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".property.PropertyDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".other.ImageViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".property.ReviewsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" /> <!-- User Activities -->
+
+        <activity
+            android:name=".admin.VerifiedUsersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".admin.SuspendedUsersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".property.FilterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".other.SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".auth.SignUp"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".chat.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".auth.PhoneAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.ChangePasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".auth.PrivateAccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".student.FavoritesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".billing.MyBookingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".billing.BookingDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".billing.PaymentDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".billing.RentTrackingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".caretaker.MyPropertiesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".supplier.WaterSupplierProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.StudentDashboardActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.StudentProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.StudentMyRoomActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.WaterOrdersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.StudentOnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".caretaker.ReportsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" /> <!-- Chat Activities -->
+        <activity
+            android:name=".other.ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".chat.ChatListActivity"
+            android:exported="false" />
+ <!-- Google Play Services for Location -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Places API for location search -->
+        <meta-data
+            android:name="com.google.android.libraries.places.API_KEY"
+            android:value="@string/google_places_api_key" /> <!-- Firebase -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="true" /> <!-- Add this for proper session handling -->
+        <meta-data
+            android:name="firebase_auth_auto_sdk"
+            android:value="true" />
+
+        <activity
+            android:name=".auth.AccountVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".supplier.WaterSupplierDashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".supplier.ServicesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".supplier.AddWaterServiceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.UserEditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".student.StudentEditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".supplier.SupplierOrdersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".supplier.WaterSuppliersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".ui.verification.IdVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HomeHub" />
+
+        <!-- ML Document Verification Activities -->
+        <activity
+            android:name=".ui.ml.CollectTrainingDataActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HomeHub" />
+        <activity
+            android:name=".ui.ml.TrainingDataDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HomeHub" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

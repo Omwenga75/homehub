@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="top"
+    android:paddingVertical="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="3dp"
+        app:cardBackgroundColor="@color/secondary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+        <ImageView
+            android:id="@+id/insightIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/ic_sparkle"
+            app:tint="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/id_v8_insightText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="Your occupancy rate is 15% higher than local average."
+        android:textColor="#475569"
+        android:textSize="13sp"
+        android:lineSpacingExtra="3dp"
+        android:fontFamily="sans-serif" />
+
+</LinearLayout>

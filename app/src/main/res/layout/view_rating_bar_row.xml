@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tvRatingNum"
+        android:layout_width="12dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <ImageView
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/star"
+        app:tint="@color/white_pure_alpha" />
+
+    <ProgressBar
+        android:id="@+id/ratingProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:max="100"
+        android:progress="80"
+        android:progressDrawable="@drawable/bg_rating_progress" />
+
+</LinearLayout>

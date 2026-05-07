@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="10dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:strokeColor="@color/border_light"
+    app:strokeWidth="1dp"
+    android:clickable="true"
+    android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Larger Image Container -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:id="@+id/ivHouseImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_house_placeholder"
+                    android:transitionName="property_image"
+                    tools:src="@drawable/hss6" />
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_overlay"/>
+
+                <!-- Top Badges -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+                    
+                    <TextView
+                        android:id="@+id/tvFeatured"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/price_background"
+                        android:backgroundTint="@color/secondary"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="FEATURED"
+                        android:textColor="@color/true_white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+                        
+                    <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardFavorite"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/true_white"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:id="@+id/ivFavorite"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/baseline_thumb_up_24"
+                            app:tint="@color/blue" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Floating Price Tag -->
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/price_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:text="Price"
+                    android:textColor="@color/true_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Sh 45,000/month"/>
+                    
+            </RelativeLayout>
+
+            <!-- Centered Details Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    
+                    <TextView
+                        android:id="@+id/tvHouseTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="Modern Family Villa"/>
+                        
+                      <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/feature_bg"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/baseline_thumb_up_24"
+                            app:tint="@color/blue"/>
+                        <TextView
+                            android:id="@+id/tvRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            tools:text="4.9"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="14dp"
+                            android:layout_marginHorizontal="8dp"
+                            android:background="@color/divider" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_view"
+                            app:tint="@color/text_secondary" />
+                        <TextView
+                            android:id="@+id/tvReviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="0"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            tools:text="124"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_location"
+                        app:tint="@color/primary"/>
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Location"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="Langata, Nairobi, Kenya"/>
+                </LinearLayout>
+
+                <!-- Centered Amenities Strip -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/feature_bg"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:orientation="horizontal">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_bed" app:tint="@color/primary"/>
+                        <TextView android:id="@+id/tvBedrooms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="0 Beds" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/text_primary" tools:text="3 Beds"/>
+                    </LinearLayout>
+                    
+                    <Space android:layout_width="12dp" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/feature_bg"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:orientation="horizontal">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_bath" app:tint="@color/primary"/>
+                        <TextView android:id="@+id/tvBathrooms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="0 Baths" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/text_primary" tools:text="2 Baths"/>
+                    </LinearLayout>
+
+                    <Space android:layout_width="12dp" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/feature_bg"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:orientation="horizontal">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_area" app:tint="@color/primary"/>
+                        <TextView android:id="@+id/tvArea" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="0 Rooms" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/text_primary" tools:text="4 Rooms"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>

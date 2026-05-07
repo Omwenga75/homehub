@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M60,8
+                          A52,52 0 1,1 59.9,8Z"/>
+
+    <!-- Empty box -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M34,42h52v36h-52z"/>
+
+    <!-- Box lid -->
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M30,42l30,-14l30,14z"/>
+
+    <!-- Sad face dot left -->
+    <path
+        android:fillColor="#757575"
+        android:pathData="M50,56a3,3 0 1,0 0.1,0Z"/>
+
+    <!-- Sad face dot right -->
+    <path
+        android:fillColor="#757575"
+        android:pathData="M70,56a3,3 0 1,0 0.1,0Z"/>
+
+    <!-- Sad mouth -->
+    <path
+        android:strokeColor="#757575"
+        android:strokeWidth="3"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M50,68c6,-4 14,-4 20,0"/>
+</vector>

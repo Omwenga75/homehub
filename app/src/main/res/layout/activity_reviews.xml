@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    tools:context=".property.ReviewsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_header_rounded_bottom"
+                android:paddingBottom="24dp">
+
+                <!-- Status Bar Spacer -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp" />
+
+                <!-- Toolbar Area -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Guest Reviews"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                </RelativeLayout>
+
+                <!-- Rating Hero Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="24dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Average Score Block -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvAverageRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.8"
+                            android:textColor="@color/white"
+                            android:textSize="48sp"
+                            android:fontFamily="sans-serif-black" />
+
+                        <RatingBar
+                            android:id="@+id/ratingIndicator"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:rating="4.8"
+                            android:isIndicator="true"
+                            android:progressTint="@color/gold"
+                            android:secondaryProgressTint="@color/gold" />
+
+                        <TextView
+                            android:id="@+id/tvTotalReviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="124 Reviews"
+                            android:textColor="@color/white_pure_alpha"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="24dp"
+                        android:background="@color/white_pure_alpha" />
+
+                    <!-- Distribution Bars -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/view_rating_bar_row" android:id="@+id/row5" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                        <include layout="@layout/view_rating_bar_row" android:id="@+id/row4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                        <include layout="@layout/view_rating_bar_row" android:id="@+id/row3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                        <include layout="@layout/view_rating_bar_row" android:id="@+id/row2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                        <include layout="@layout/view_rating_bar_row" android:id="@+id/row1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="16dp"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnWriteReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:text="Write a Review"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_edit"
+        app:iconTint="@color/white"
+        app:backgroundTint="@color/primary_dark"
+        app:elevation="8dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

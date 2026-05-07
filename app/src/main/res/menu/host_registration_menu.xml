@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_save_draft"
+        android:icon="@drawable/read"
+        android:title="Save Draft"
+        android:iconTint="@color/white"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/call"
+        android:iconTint="@color/white"
+        android:title="Help"
+        app:showAsAction="ifRoom" />
+
+</menu>

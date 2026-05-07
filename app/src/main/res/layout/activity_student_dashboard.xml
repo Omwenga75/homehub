@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".student.StudentDashboardActivity">
+
+    <!-- Top Professional Header with Rounded Bottom Corners -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <!-- Status Bar Spacer (Explicit Clearance) -->
+        <View
+            android:id="@+id/statusBarSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@color/primary_dark" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fixedHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/primary_dark"
+            app:cardPreventCornerOverlap="false"
+            app:strokeWidth="0dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.RoundedBottom.Compact">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="@dimen/header_padding_bottom">
+
+                <!-- Circular profile image -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="@dimen/profile_image_standard"
+                    android:layout_height="@dimen/profile_image_standard"
+                    android:src="@drawable/ks4"
+                    app:civ_border_color="@color/true_white"
+                    app:civ_border_width="1.5dp"
+                    app:layout_constraintTop_toTopOf="@id/btnNotificationHeader"
+                    app:layout_constraintBottom_toBottomOf="@id/btnNotificationHeader"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/padding_screen"/>
+
+                <!-- Logged-in badge removed with circular profile image -->
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.02"
+                    android:text="Welcome home,"
+                    android:textColor="@color/white_pure_alpha"
+                    android:textSize="12sp"
+                    android:layout_marginStart="14dp"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile"
+                    app:layout_constraintBottom_toTopOf="@+id/nameContainer"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintVertical_chainStyle="packed"/>
+
+                <LinearLayout
+                    android:id="@+id/nameContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvGreeting"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintEnd_toStartOf="@+id/btnNotificationHeader">
+                    
+                    <TextView
+                        android:id="@+id/tvStudentName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="John Doe"
+                        android:textColor="@color/true_white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:ellipsize="end"
+                        android:maxLines="1" />
+
+                    <ImageView
+                        android:id="@+id/ivVerifiedBadge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_verified"
+                        app:tint="@color/true_white"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnNotificationHeader"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="@dimen/padding_screen"
+                    android:layout_marginTop="@dimen/margin_xlarge"
+                    android:background="@drawable/circle_background_alpha"
+                    android:backgroundTint="@color/white_pure_alpha"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivNotification"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_notification"
+                        app:tint="@color/true_white" />
+
+                    <TextView
+                        android:id="@+id/notificationBadge"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignTop="@id/ivNotification"
+                        android:layout_alignEnd="@id/ivNotification"
+                        android:layout_marginTop="-4dp"
+                        android:layout_marginEnd="-4dp"
+                        android:background="@drawable/badge_background"
+                        android:backgroundTint="@color/red_500"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/true_white"
+                        android:textSize="9sp" />
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/searchCard"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height_small"
+                    android:layout_marginHorizontal="@dimen/padding_screen"
+                    android:layout_marginTop="@dimen/margin_large"
+                    app:cardBackgroundColor="@color/surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivProfile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/search"
+                            app:tint="@color/primary_dark" />
+
+                        <EditText
+                            android:id="@+id/searchEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="Search properties..."
+                            android:imeOptions="actionSearch"
+                            android:paddingHorizontal="12dp"
+                            android:singleLine="true"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:background="@color/primary_dark" />
+
+                        <ImageView
+                            android:id="@+id/filterIcon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_filter"
+                            app:tint="@color/primary_dark" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content Area -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/bottom_action_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Categories -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="20dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Explore Categories"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+
+
+                <!-- Sectioned Contents -->
+                <LinearLayout
+                    android:id="@+id/bedsittersSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include layout="@layout/layout_section_header" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvBedsitters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/oneBedroomSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include layout="@layout/layout_section_header" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOneBedroom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/twoBedroomsSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include layout="@layout/layout_section_header" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTwoBedrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/singleRoomsSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include layout="@layout/layout_section_header" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSingleRooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sharedHousesSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <include layout="@layout/layout_section_header" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSharedHouses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="16dp" />
+                </LinearLayout>
+
+
+                <!-- Empty State -->
+                <LinearLayout
+                    android:id="@+id/emptyStateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/ic_empty_state" />
+                    <TextView
+                        android:id="@+id/tvEmptyState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="No properties found"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="15sp"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Premium Bottom Navigation - Floating Glassmorphism -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomNavCard"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="0dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:strokeWidth="0dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/nav_glass_background" />
+
+        <FrameLayout
+            android:id="@+id/navContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- Home Tab -->
+                <LinearLayout
+                    android:id="@+id/navAddProperty"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+                    
+                    <ImageView
+                        android:id="@+id/ivNavAddProperty"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_home_24"
+                        app:tint="@color/primary" />
+                        
+                    <TextView
+                        android:id="@+id/tvNavAddProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textSize="11sp"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Saved Tab -->
+                <LinearLayout
+                    android:id="@+id/navApplication"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+                    
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:clipToPadding="false">
+                        
+                        <ImageView
+                            android:id="@+id/ivNavSaved"
+                            android:layout_width="24dp"
+                            app:tint="@color/text_secondary"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_messages" />
+                            
+                        <TextView
+                            android:id="@+id/roomBadgeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:minWidth="14dp"
+                            android:paddingHorizontal="4dp"
+                            android:layout_alignTop="@id/ivNavSaved"
+                            android:layout_alignEnd="@id/ivNavSaved"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginEnd="-4dp"
+                            android:background="@drawable/badge_background"
+                            android:backgroundTint="@color/red_500"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/true_white"
+                            android:textSize="8sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                        
+                    <TextView
+                        android:id="@+id/tvNavSaved"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Messages"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Center Spacer for FAB -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:visibility="visible" />
+
+                <!-- Water Tab -->
+                <LinearLayout
+                    android:id="@+id/navSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+                    
+                    <ImageView
+                        android:id="@+id/ivNavSearch"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_water_drop"
+                        app:tint="@color/text_secondary" />
+                        
+                    <TextView
+                        android:id="@+id/tvNavSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Water"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- More Tab -->
+                <LinearLayout
+                    android:id="@+id/navMore"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+                    
+                    <ImageView
+                        android:id="@+id/ivNavProfile"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_menu_white"
+                        app:tint="@color/textSecondary" />
+                        
+                    <TextView
+                        android:id="@+id/tvNavProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMyRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bookings"
+        app:backgroundTint="@color/primary"
+        app:tint="@color/true_white"
+        app:elevation="14dp"
+        app:fabSize="normal"
+        app:maxImageSize="32dp"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/bottomNavCard"
+        app:layout_anchorGravity="center"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.FAB.Squircle" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

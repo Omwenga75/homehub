@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guest Experiences"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose an option to explore reviews"
+        android:textColor="@color/textSecondary"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Add Review Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addReviewDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/blue"
+        android:text="Add Your Review"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/star"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="@color/white" />
+
+    <!-- See Reviews Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/seeReviewsDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="12dp"
+        android:text="See All Reviews"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/star"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconTint="@color/blue"
+        app:strokeColor="@color/blue"
+        app:strokeWidth="2dp" />
+
+    <!-- Cancel Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelDialogButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Cancel"
+        android:textColor="@color/textSecondary"
+        android:textSize="14sp"
+        android:backgroundTint="@color/light_gray"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

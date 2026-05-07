@@ -1,0 +1,6 @@
+serviceAccountKey.json
+.gradle/
+.idea/
+build/
+local.properties
+generate_pdf.py
