@@ -1,22 +1,67 @@
-# HomeHub
+Project Overview
+The project, STUDENT RENTAL MANAGEMENT SYSTEM (HomeHub) is a sophisticated, multi-role Android application designed to streamline property management, caretaker services, and student living. It integrates a robust Firebase backend with a modular Kotlin-based frontend to provide a seamless experience for all stakeholders in the residential ecosystem.
 
-Professional Smart Living Ecosystem for Android.
+Technical Architecture
+-Platform: Android (Kotlin)
+- Backend: Firebase (Authentication, Real-time Database, Storage)
+- Architecture: Modular Package-by-Feature (Admin, Auth, Billing, Caretaker, Chat, Property, Student, Water Supplier)
+- Automation: Python-based maintenance scripts for Firebase data management and email migrations.
 
-## 🚀 Quick Start
-Refer to [QUICKSTART.md](file:///c:/Users/USER/Desktop/HomeHub/QUICKSTART.md) for environment setup and Firebase initialization.
 
-## 📖 Documentation
-Detailed technical documentation can be found in:
-- [DOCUMENTATION.md](file:///c:/Users/USER/Desktop/HomeHub/DOCUMENTATION.md)
-- [HomeHub_Documentation.pdf](file:///c:/Users/USER/Desktop/HomeHub/HomeHub_Documentation.pdf) (Generated after setup)
+User Roles & Modules
+The system is built around several key user persons, each with dedicated dashboards and functionality:
+1. Students
+- Property search and application.
+- Rent payment and billing history.
+- Maintenance request tracking.
+- Student sign up/login using a provided student email from university / school.
+- Direct communication with caretakers/suppliers.
 
-## 🏗️ Architecture
-- **Android**: Kotlin-based modular architecture.
-- **Backend**: Firebase Real-time Database & Authentication.
-- **Scripts**: Python utilities for data maintenance.
+2. Caretaker
+- Maintenance task management.
+- Resident communication.
+- Property inspection logs.
+- Emergency response coordination.
 
-## 👥 Roles
-- **Student**: Resident portal.
-- **Caretaker**: Task and property management.
-- **Supplier**: Service fulfillment.
-- **Admin**: System oversight.
+3. Water Supplier
+- Water Service request fulfillment.
+- Invoicing and payment tracking.
+- Availability management.
+
+4. Administrator
+- User role management.
+- System-wide monitoring and reporting.
+- Financial oversight and billing reconciliation.
+
+Key Features
+- Real-time Chat: Instant communication between residents, caretakers, and service providers.
+- Payment System: Integrated payment via Daraja API for rent and water services with automated tracking.
+- Property Management: Comprehensive listing and management of residential units.
+- Firebase Integration: Secure authentication and real-time data synchronization.
+- Maintenance Workflow: End-to-end tracking of service requests from reporting to completion.
+
+
+Maintenance & DevOps
+The project includes a suite of specialized tools for developers:
+- `RUN_ME_FIRST.bat`: Automated setup and Firebase initialization.
+- `update_emails.py`: Scripted migration of user identities (e.g., domain updates).
+- `setup_firebase.py`: Streamlined service account configuration.
+- `refactor.py`: Utilities for project-wide code reorganization.
+
+Setup Instructions
+1. Clone the Repository: Ensure all submodules and assets are present.
+2. Firebase Configuration:
+   - Place `serviceAccountKey.json` in the root directory.
+   - Run `RUN_ME_FIRST.bat` to initialize the database environment.
+3. Android Studio:
+   - Open the project in Android Studio.
+   - Sync Gradle and build the project.
+4. Environment:
+   - Python 3.x is required for maintenance scripts.
+
+Version & Status
+- Current Version: 1.2.0
+- Build Status: Stable
+- Maintenance Status: Active
+
+
